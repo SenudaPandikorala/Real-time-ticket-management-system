@@ -1,7 +1,7 @@
 package com.TicketManagementSystem.Back_End.controller;
 
 import com.TicketManagementSystem.Back_End.Service.VendorService;
-import com.TicketManagementSystem.Back_End.dto.request.VendorSaveRequestDto;
+import com.TicketManagementSystem.Back_End.dto.request.VendorSaveRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ public class VendorController {
     private VendorService vendorService;
 
     @PostMapping(path = "/save-vendor")
-    public String saveCustomer(@RequestBody VendorSaveRequestDto vendorSaveRequestDto){
+    public String saveCustomer(@RequestBody VendorSaveRequestDTO vendorSaveRequestDto){
 
         String message= vendorService.saveVendor(vendorSaveRequestDto);
 

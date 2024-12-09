@@ -1,5 +1,6 @@
 package com.TicketManagementSystem.Back_End.dto.request;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,15 +8,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
-public class VendorSaveRequestDto {
-
-    private int vendorId;
-
-
-    private int ticketPerRelease;
+public class ConfigSaveRequestDTO {
 
     private int totalTickets;
 
-}
+    private int ticketReleaseRate;
 
+    private int customerRetrievalRate;
+    private int maxTicketCapacity;
+}
