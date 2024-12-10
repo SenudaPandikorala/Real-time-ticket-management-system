@@ -1,13 +1,13 @@
 package org.example;
 
-public class Customer extends AbstractTicketHandler implements Runnable {
+public class Customer implements Runnable {
     private TicketPool ticketPool;
     private int customerId;
     private int customerRetrievalRate;
     private int quantity;
 
     public Customer(int customerId,TicketPool ticketPool, int customerRetrievalRate, int quantity) {
-        super(ticketPool);
+//        super(ticketPool);
         this.ticketPool = ticketPool;
         this.customerId = customerId;
         this.customerRetrievalRate = customerRetrievalRate;// ticket removing frequency from the ticket pool.
@@ -47,8 +47,4 @@ public class Customer extends AbstractTicketHandler implements Runnable {
     }
 
 
-    @Override
-    public void handleTickets() {
-        run();
-    }
 }

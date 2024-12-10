@@ -3,16 +3,22 @@ package com.TicketManagementSystem.Back_End.Service.impl;
 
 import com.TicketManagementSystem.Back_End.Service.TicketPoolService;
 import com.TicketManagementSystem.Back_End.entity.Ticket;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Service
 public class TicketPoolServiceImpl implements TicketPoolService {
 
     private final Queue<Ticket> ticketQueue = new LinkedList<>();
-    private final int maxCapacity = 100; // hardcoded maxcapacity
+
+    private int maxCapacity; // hardcoded maxcapacity
 
 
     @Override
@@ -42,5 +48,9 @@ public class TicketPoolServiceImpl implements TicketPoolService {
         notifyAll();
         return ticket;
 
+    }
+    @Override
+    public void setMaxCapacity(int maxTicketCapacity){
+        this.maxCapacity=maxCapacity;
     }
 }

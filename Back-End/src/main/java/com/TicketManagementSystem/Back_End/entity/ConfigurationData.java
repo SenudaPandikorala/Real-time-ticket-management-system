@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -31,8 +32,13 @@ public class ConfigurationData {
     @Column(name = "customer_retrieval_rate", length = 10, nullable = false)
     private int customerRetrievalRate;
 
+
     @Column(name = "max_ticket_capacity", length = 10, nullable = false)
+    @Getter
     private int maxTicketCapacity;
+
+
+
 
 
 
