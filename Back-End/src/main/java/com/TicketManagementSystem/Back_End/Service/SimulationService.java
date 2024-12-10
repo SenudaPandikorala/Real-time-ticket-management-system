@@ -3,7 +3,7 @@ package com.TicketManagementSystem.Back_End.Service;
 import com.TicketManagementSystem.Back_End.entity.ConfigurationData;
 
 public interface SimulationService {
-    void startSimulation(ConfigurationData configurationData);
+    void startSimulation();
 
-    void stopSimulation();
+    void stopSimulation() throws InterruptedException;
 }

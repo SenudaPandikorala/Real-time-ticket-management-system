@@ -15,5 +15,6 @@ public class ConfigSaveRequestDTO {
     private int ticketReleaseRate;
 
     private int customerRetrievalRate;
+
     private int maxTicketCapacity;
 }

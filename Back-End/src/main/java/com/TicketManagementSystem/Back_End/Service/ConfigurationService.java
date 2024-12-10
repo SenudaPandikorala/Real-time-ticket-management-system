@@ -4,6 +4,6 @@ import com.TicketManagementSystem.Back_End.dto.request.ConfigSaveRequestDTO;
 
 public interface ConfigurationService {
 
-    String saveconfig(ConfigSaveRequestDTO saveRequestDTO);
+     void saveconfig(ConfigSaveRequestDTO saveRequestDTO);
 
 }

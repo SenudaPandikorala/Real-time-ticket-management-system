@@ -1,9 +1,14 @@
 package com.TicketManagementSystem.Back_End.RunClasses;
 
 import com.TicketManagementSystem.Back_End.Service.TicketPoolService;
+import com.TicketManagementSystem.Back_End.Service.impl.ConfigurationServiceImpl;
 import com.TicketManagementSystem.Back_End.entity.Ticket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CustomerRun implements Runnable {
+    private static final Logger logger = LoggerFactory.getLogger(CustomerRun.class);
+
 
         private TicketPoolService ticketPoolService;
         private int customerId;
@@ -27,19 +32,19 @@ public class CustomerRun implements Runnable {
             for (int i =0; i<quantity; i++){
 
                 if(!running){
-//                    LoggerUtil.logInfo("Customer "+ customerId + " stopped");
-                    System.out.println("Customer "+ customerId + " stopped");
+
+                    logger.info("Customer "+ customerId + " stopped");
                     break;
                 }
                 Ticket ticket = ticketPoolService.buyTicket();
 
                 //details of the ticket
                 if (ticket !=null) {
-//                    LoggerUtil.logInfo(" Tickets bought by : " + Thread.currentThread().getName() + "Ticket is = " + ticket);
-                    System.out.println(" Tickets bought by : " + Thread.currentThread().getName() + "Ticket is = " + ticket);
+
+                    logger.info(" Tickets bought by : " + Thread.currentThread().getName() + "Ticket is = " + ticket);
                 }else{
-//                    LoggerUtil.logWarning("Customer " + customerId + " customer could not purchase a ticket because the ticket pool is empty");
-                    System.out.println("Customer " + customerId + " customer could not purchase a ticket because the ticket pool is empty");
+
+                   logger.info("Customer " + customerId + " customer could not purchase a ticket because the ticket pool is empty");
                 }
 
                 //ticket removing delay
@@ -47,14 +52,14 @@ public class CustomerRun implements Runnable {
                     Thread.sleep(customerRetrievalRate * 1000);
 
                 }catch (InterruptedException e){
-//                    LoggerUtil.logWarning("Customer " + customerId+ " interrupted" + e.getMessage());
-                    System.out.println("Customer " + customerId+ " interrupted" + e.getMessage());
+
+                    logger.info("Customer " + customerId+ " interrupted" + e.getMessage());
                     Thread.currentThread().interrupt();
                     break;
                 }
             }
-//            LoggerUtil.logInfo("Customer " + customerId + " has finished purchasing tickets. ");
-            System.out.println("Customer " + customerId + " has finished purchasing tickets. ");
+
+            logger.info("Customer " + customerId + " has finished purchasing tickets. ");
         }
 
 

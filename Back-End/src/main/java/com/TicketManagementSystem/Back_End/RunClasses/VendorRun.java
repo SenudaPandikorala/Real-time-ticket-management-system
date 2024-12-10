@@ -2,10 +2,13 @@ package com.TicketManagementSystem.Back_End.RunClasses;
 
 import com.TicketManagementSystem.Back_End.Service.TicketPoolService;
 import com.TicketManagementSystem.Back_End.entity.Ticket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 
 public class VendorRun implements Runnable {
+    private static final Logger logger = LoggerFactory.getLogger(VendorRun.class);
 
         private TicketPoolService ticketPoolService; //ticket pool which is shared by the customer and vendors.
         private int vendorId;
@@ -24,33 +27,34 @@ public class VendorRun implements Runnable {
 
         @Override
         public void run() {
+            System.out.println(totalTickets);
 
             for (int i = 1; i <= totalTickets; i++) {
 
                 if (!running) {
-//                    LoggerUtil.logInfo("Vendor " + vendorId + " stopped");
-                    System.out.println("Vendor " + vendorId + " stopped");
+                    logger.info("Vendor " + vendorId + " stopped");
 
                     break;
                 }
                 //creating and adding a ticket to the pool
                 Ticket ticket = new Ticket(i, "event agastra", new BigDecimal("1000"));
+                System.out.println("bye bye");
                 ticketPoolService.addTicket(ticket);
-//                LoggerUtil.logInfo("Vendor " + vendorId + " added ticket:" + ticket);
-                System.out.println("Vendor " + vendorId + " added ticket:" + ticket);
+
+                logger.info("Vendor " + vendorId + " added ticket:" + ticket);
 
 
                 try {
                     Thread.sleep(ticketPerRelease * 1000);
                 } catch (InterruptedException e) {
-//                    LoggerUtil.logWarning("Vendor " + vendorId + " interrupted:" + e.getMessage());
-                    System.out.println("Vendor " + vendorId + " interrupted:" + e.getMessage());
+
+                    logger.info("Vendor " + vendorId + " interrupted:" + e.getMessage());
                     Thread.currentThread().interrupt();
                     break;
                 }
             }
-//            LoggerUtil.logInfo("vendor " + vendorId + " finished releasing tickets");
-            System.out.println("vendor " + vendorId + " finished releasing tickets");
+
+            logger.info("vendor " + vendorId + " finished releasing tickets");
 
 
         }
