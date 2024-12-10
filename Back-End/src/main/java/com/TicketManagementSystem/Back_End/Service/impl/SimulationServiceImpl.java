@@ -2,11 +2,8 @@ package com.TicketManagementSystem.Back_End.Service.impl;
 
 import com.TicketManagementSystem.Back_End.RunClasses.CustomerRun;
 import com.TicketManagementSystem.Back_End.RunClasses.VendorRun;
-import com.TicketManagementSystem.Back_End.Service.ConfigurationService;
 import com.TicketManagementSystem.Back_End.Service.SimulationService;
 import com.TicketManagementSystem.Back_End.Service.TicketPoolService;
-import com.TicketManagementSystem.Back_End.dto.request.ConfigSaveRequestDTO;
-import com.TicketManagementSystem.Back_End.entity.ConfigurationData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
@@ -37,7 +34,6 @@ public class SimulationServiceImpl implements SimulationService {
 
         //Creating and starting vendor threads
         for (int i = 0; i < 10; i++) {
-            System.out.println("hihi");
             VendorRun vendorRun = new VendorRun(i, ticketPoolService, configurationServiceImpl.getTicketReleaseRate(), configurationServiceImpl.getTotalTickets(),running);
             Thread vendorThread = new Thread(vendorRun, "Vendor-" + i);
             vendorThreads.add(vendorThread);

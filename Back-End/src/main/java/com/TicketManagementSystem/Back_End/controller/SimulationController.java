@@ -1,11 +1,8 @@
 package com.TicketManagementSystem.Back_End.controller;
 
 import com.TicketManagementSystem.Back_End.Service.SimulationService;
-import com.TicketManagementSystem.Back_End.Service.impl.ConfigurationServiceImpl;
-import com.TicketManagementSystem.Back_End.entity.ConfigurationData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;

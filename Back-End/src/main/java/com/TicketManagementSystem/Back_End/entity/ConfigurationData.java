@@ -18,9 +18,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class ConfigurationData {
 
-//    @Id
-//    @Column(name = "config_id", length = 10)
-//    private int configId;
 
     @Id
     @Column(name = "total_tickets", length = 10)

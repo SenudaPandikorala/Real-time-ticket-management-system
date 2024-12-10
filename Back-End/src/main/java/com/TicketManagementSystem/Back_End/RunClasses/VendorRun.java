@@ -17,7 +17,7 @@ public class VendorRun implements Runnable {
         private final boolean running;//number of tickets vendor willing to sell.
 
         public VendorRun(int vendorId, TicketPoolService ticketPoolService, int ticketPerRelease, int totalTickets,boolean running) {
-//        super(ticketPool);
+
             this.vendorId = vendorId;
             this.ticketPoolService=ticketPoolService;
             this.ticketPerRelease = ticketPerRelease;
@@ -38,7 +38,7 @@ public class VendorRun implements Runnable {
                 }
                 //creating and adding a ticket to the pool
                 Ticket ticket = new Ticket(i, "event agastra", new BigDecimal("1000"));
-                System.out.println("bye bye");
+
                 ticketPoolService.addTicket(ticket);
 
                 logger.info("Vendor " + vendorId + " added ticket:" + ticket);
