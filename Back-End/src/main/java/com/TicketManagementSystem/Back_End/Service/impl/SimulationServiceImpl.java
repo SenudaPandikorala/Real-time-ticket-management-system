@@ -73,6 +73,7 @@ public class SimulationServiceImpl implements SimulationService {
             vendorThreads.clear();
             customerThreads.clear();
             running = false;
+            logger.info("Simulation has been terminated. Thank you!");
         }
     }
 }
