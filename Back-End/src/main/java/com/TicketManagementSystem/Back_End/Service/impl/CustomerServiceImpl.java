@@ -12,7 +12,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     private CustomerRepo customerRepo;
-
+    //Method to save the customer data to the database
     @Override
     public String saveCustomer(CustomerSaveRequestDTO saveRequestDTO) {
 

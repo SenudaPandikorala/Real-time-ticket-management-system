@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("api/v1/simulation")
-
+//Contoller to handle the start and stop of the system
 public class SimulationController {
     private static final Logger logger = LoggerFactory.getLogger(SimulationController.class);
 

@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Data
 
-
+//Making the ticket entity
 public class Ticket {
     @Id
     @Column(name = "ticket_id", length = 10)

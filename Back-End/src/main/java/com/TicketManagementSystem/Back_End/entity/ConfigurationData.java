@@ -1,6 +1,4 @@
 package com.TicketManagementSystem.Back_End.entity;
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -16,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 @Data
-public class ConfigurationData {
+public class ConfigurationData { //Making the entity of configurations  class
 
 
     @Id

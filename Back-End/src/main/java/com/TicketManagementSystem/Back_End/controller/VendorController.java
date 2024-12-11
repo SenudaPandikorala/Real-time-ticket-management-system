@@ -15,7 +15,7 @@ public class VendorController {
     private VendorService vendorService;
 
     @PostMapping(path = "/save-vendor")
-    public String saveCustomer(@RequestBody VendorSaveRequestDTO vendorSaveRequestDto){
+    public String saveVendor(@RequestBody VendorSaveRequestDTO vendorSaveRequestDto){
 
         String message= vendorService.saveVendor(vendorSaveRequestDto);
 

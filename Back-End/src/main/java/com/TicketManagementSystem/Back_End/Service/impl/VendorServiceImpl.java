@@ -12,7 +12,7 @@ public class VendorServiceImpl implements VendorService {
 
     @Autowired
     private VendorRepo vendorRepo;
-
+    //method to save a vendor to the database
     @Override
     public String saveVendor(VendorSaveRequestDTO vendorSaveRequestDto) {
         Vendor vendor= new Vendor(

@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @EnableJpaRepositories
+
+//Vendor  repository layer
 public interface VendorRepo extends JpaRepository<Vendor,Integer> {
 }

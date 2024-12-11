@@ -5,7 +5,7 @@ import com.TicketManagementSystem.Back_End.Service.impl.ConfigurationServiceImpl
 import com.TicketManagementSystem.Back_End.entity.Ticket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+//Making the customer run class which handles the buying process of the tickets
 public class CustomerRun implements Runnable {
     private static final Logger logger = LoggerFactory.getLogger(CustomerRun.class);
 

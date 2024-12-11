@@ -14,7 +14,7 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
-
+    //Contoller to save customer in the database
     @PostMapping(path = "/save-customer")
     public String saveCustomer(@RequestBody CustomerSaveRequestDTO saveRequestDTO){
 

@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
-
+//Making the vendor run class which handles the releasing tickets.
 public class VendorRun implements Runnable {
     private static final Logger logger = LoggerFactory.getLogger(VendorRun.class);
 

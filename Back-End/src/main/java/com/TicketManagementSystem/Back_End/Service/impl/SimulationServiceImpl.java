@@ -22,6 +22,7 @@ public class SimulationServiceImpl implements SimulationService {
     @Autowired
     private ConfigurationServiceImpl configurationServiceImpl;
     private static final Logger logger = LoggerFactory.getLogger(SimulationServiceImpl.class);
+
     // Creating the method to start the simulation
     @Override
     public synchronized void startSimulation() {
@@ -70,7 +71,7 @@ public class SimulationServiceImpl implements SimulationService {
                 customerThread.interrupt();
             }
         } finally {
-            vendorThreads.clear();
+            vendorThreads.clear(); //clearing all the vendor and customer threads
             customerThreads.clear();
             running = false;
             logger.info("Simulation has been terminated. Thank you!");

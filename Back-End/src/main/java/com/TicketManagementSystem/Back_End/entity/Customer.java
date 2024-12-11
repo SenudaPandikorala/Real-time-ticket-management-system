@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 @Data
-
+//Making the customer entity
 public class Customer {
 
     @Id

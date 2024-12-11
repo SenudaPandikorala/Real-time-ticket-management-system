@@ -1,13 +1,9 @@
 package com.TicketManagementSystem.Back_End.Service.impl;
-
 import com.TicketManagementSystem.Back_End.Service.ConfigurationService;
 import com.TicketManagementSystem.Back_End.dto.request.ConfigSaveRequestDTO;
 import com.TicketManagementSystem.Back_End.entity.ConfigurationData;
 import com.TicketManagementSystem.Back_End.repo.ConfigurationRepo;
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
@@ -52,8 +48,5 @@ public class ConfigurationServiceImpl implements ConfigurationService {
 
     }
 
-//    @Override
-//    public ConfigurationData getConfiguration() {
-//        return null;
-//    }
+
 }
